@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Caramel&family=Dancing+Script:wght@700&family=Play&family=Rubik+Gemstones&family=Rubik+Storm&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.avatar {
+  --border-color: #8739f9;
+  border: 4px solid var(--border-color);
+  
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  width: calc(var(--avatar-size) * 0.95);
+  height: calc(var(--avatar-size) * 0.95);
+  border: 4px solid transparent;
+  border-top-color: #c651cd;
+  border-radius: 50%;
+  top: 0px;
+  left: 0px;
+  transform: translate(-50%, -50%);
+  animation: spin 3s linear infinite;
+}
